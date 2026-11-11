@@ -51,6 +51,7 @@ python scripts/12_acdc_pipeline.py
 python scripts/13_extra_analyses.py
 python scripts/14_si_data.py
 python scripts/15_nonlinear_dc_validation.py --reps 100
+python scripts/27_interval_baselines.py
 python scripts/plot_calibration_summary.py
 ```
 
@@ -62,6 +63,9 @@ python scripts/plot_calibration_summary.py
 | 07–09 | Fabric-excluding drape evaluation, residual intervals and correction-budget comparisons |
 | 10–12 | Adjusted associations, paired bootstrap/SHAP and pooled calibration ablations |
 | 13–15 | Group/family and selection diagnostics, scaling/ALE, split sensitivity and nonlinear drape checks |
+| 27 | Budget-matched interval constructions (split conformal, jackknife+, Student-t and in-sample radii) on the anchor draws of stage 12 |
+
+Stage numbers follow the study's script numbering. Numbers 16–26 are document-preparation steps that are not part of this release.
 
 `plot_calibration_summary.py` provides a small reusable plotting example. It reads computed result tables; it does not recreate the manuscript's pictorial workflow or redistribute third-party scan/render assets.
 
@@ -69,7 +73,7 @@ python scripts/plot_calibration_summary.py
 
 - Training labels and GT-scene references retain their released identities. The GT values are simulator parameterizations read from the source scenes.
 - Shared label or metadata vectors define operational dependence groups. Structure-family holdout uses a different ensemble from fabric-group validation.
-- Reference calibration is retrospective within the available collection. ACDC residual intervals use leave-one-anchor-out scores with a full-anchor centre; their empirical coverage is evaluated directly.
+- Reference calibration is retrospective within the available collection. ACDC residual intervals use leave-one-anchor-out scores with a full-anchor centre; their empirical coverage is evaluated directly. Stage 27 scores split-conformal and jackknife+ intervals on the same anchor draws for comparison.
 - Material coefficients are adjusted observational associations. The drape evaluator reproduces the released simulation configuration.
 
 The release retains the implemented analysis and random seeds. Documentation wording is aligned with these definitions; code preparation does not refit models or change numerical expressions.
