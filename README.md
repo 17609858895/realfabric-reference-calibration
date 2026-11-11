@@ -1,6 +1,6 @@
 # Fabric reference calibration
 
-Core analysis code for **Small reference sets calibrate fabric metadata predictions and simulated drape**.
+Core analysis code for the study **How do small reference sets improve metadata-based predictions of fabric stiffness and simulated drape?**
 
 The workflow predicts six log stiffness parameters from fabric metadata, evaluates their simulated-drape consequences, and studies calibration with small sets of released reference fabrics. The analysed collection contains 1,275 training records, 194 matched GT-scene reference fabrics and 584 released Cusick scenes.
 
